@@ -3,7 +3,7 @@ title: "I Built a Cozy 60 FPS AI Agent Bakery Game (Built with Gemma 4 & Antigra
 published: true
 description: "Play Prompt Paws: Cozy AI Agent Cafe, an interactive 60 FPS HTML5 Canvas simulation built with Google Gemma 4 and Antigravity that teaches RAG, Context Caching, Guardrails, and Subagent Orchestration through pastry chef bots."
 tags: gamedev, ai, javascript, opensource
-cover_image: https://raw.githubusercontent.com/RobinaMirbahar/cozy-ai-agent-cafe-game/main/assets/cozy_ai_cafe_banner.jpg
+cover_image: https://raw.githubusercontent.com/RobinaMirbahar/cozy-bakery-game/main/articles/cozy-bakery-game/img/cozy_ai_cafe_banner.jpg
 ---
 ## What I Built
 
@@ -25,7 +25,7 @@ I built and open-sourced **Prompt Paws: The Cozy AI Agent Cafe & Bakery** (archi
 | **🍮 Deep-Think Souffle Oven** | Reasoning Souffle | **Extended Thinking / System-2 Deliberation** |
 | **🐱 Subagent Sous-Chef Bell** | Parallel Banquet Aura | **Multi-Agent Parallel Delegation (+45% Speed Aura)** |
 
-![Prompt Paws: Cozy AI Agent Cafe Banner](https://raw.githubusercontent.com/RobinaMirbahar/cozy-ai-agent-cafe-game/main/assets/cozy_ai_cafe_banner.jpg)
+![Prompt Paws: Cozy AI Agent Cafe Banner](https://raw.githubusercontent.com/RobinaMirbahar/cozy-bakery-game/main/articles/cozy-bakery-game/img/cozy_ai_cafe_banner.jpg)
 
 ---
 
