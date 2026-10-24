@@ -1,1 +1,3 @@
-﻿Verified 7 stations and 7 levels in levels.js, game.js, and audio.js against https://github.com/RobinaMirbahar/cozy-ai-agent-cafe-game
+﻿Verified against levels.js, game.js, and audio.js in https://github.com/RobinaMirbahar/cozy-ai-agent-cafe-game:
+- Client-side HTML5 Canvas simulation cost: $0.00 API token cost (zero external paid LLM calls).
+- Context Cache Jar (cookie_cache) speed ratio: 3x faster (processTime 20 frames vs reasoning_oven 62 frames / flash_oven 48 frames).

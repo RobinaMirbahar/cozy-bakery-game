@@ -20,10 +20,10 @@ gamedev, ai, javascript, opensource
 3000 (standing estimate, not a counter reading)
 
 ## Date published
-(fill in the date it actually went public)
+2026-10-24
 
 ## Link to Content
-(PENDING — the article is not published)
+https://dev.to/gde/i-built-a-cozy-60-fps-ai-agent-bakery-game-to-teach-rag-guardrails-context-caching-multi-agent-2ek
 
 ## Cover image
 advocu-devto-cozy-bakery-game-cover.webp (1376x578 WebP, 159 KB, from cover-64fcd89e.png)
