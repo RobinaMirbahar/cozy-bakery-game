@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>I Built a Cozy 60 FPS AI Agent Bakery Game (Built with Gemma 4 &amp; Antigravity) to Teach RAG, Guardrails &amp; Multi-Agent Orchestration</title>
-  <meta name="description" content="Play Prompt Paws: Cozy AI Agent Cafe — an interactive 60 FPS HTML5 Canvas simulation built with Google Gemma 4 &amp; Antigravity that teaches RAG, Context Caching, Guardrails, and Subagent Orchestration through pastry chef bots." />
+  <meta name="description" content="Play Prompt Paws: Cozy AI Agent Cafe, an interactive 60 FPS HTML5 Canvas simulation built with Google Gemma 4 and Antigravity that teaches RAG, Context Caching, Guardrails, and Subagent Orchestration through pastry chef bots." />
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -186,13 +186,12 @@
   </style>
 </head>
 <body>
-<figure><img src="https://raw.githubusercontent.com/RobinaMirbahar/cozy-bakery-game/main/articles/cozy-bakery-game/medium/img/cozy_ai_cafe_banner.jpg" alt="I Built a Cozy 60 FPS AI Agent Bakery Game (Built with Gemma 4 &amp; Antigravity) to Teach RAG, Guardrails &amp; Multi-Agent Orchestration" /></figure>
 <h4 id="what-i-built">What I Built</h4>
 <p>Who said learning <strong>AI System Design</strong> has to be all
 dark cyberpunk terminal screens and exploding servers?</p>
 <p>I built and open-sourced <strong>Prompt Paws: The Cozy AI Agent Cafe
 &amp; Bakery</strong> (architected with <strong>Google Gemma 4 &amp;
-Antigravity</strong>) — an interactive <strong>60 FPS AI Agent
+Antigravity</strong>), an interactive <strong>60 FPS AI Agent
 Architecture Training &amp; Simulation Platform</strong> disguised as a
 cozy pastel pastry bakery run by <strong>Robot-Cat Chefs</strong>!
 🐱‍🍳🍰</p>
@@ -216,15 +215,16 @@ alt="Prompt Paws: Cozy AI Agent Cafe Banner" /></p>
 Live Playable Demo &amp; How to Play in 30 Seconds!</h4>
 <ul>
 <li><strong>🕹️ Play Live in Your Browser (60 FPS HTML5 Canvas):</strong>
-👉 <strong><a
+<strong><a
 href="https://robinamirbahar.github.io/cozy-ai-agent-cafe-game/"><span>https://robinamirbahar.github.io/cozy-ai-agent-cafe-game/</span></a></strong></li>
 <li><strong>🔒 100% Client-Side Simulation ($0.00 API Cost &amp; Zero
 Keys Required):</strong> The entire game runs locally inside your
-browser using a deterministic HTML5 Canvas simulation engine—<strong>no
+browser using a deterministic HTML5 Canvas simulation engine. <strong>No
 API keys, no sign-ups, and zero paid LLM tokens</strong> are ever used
 when you or your team play!</li>
 </ul>
-<p><img src="https://files.catbox.moe/i9wg40.jpg"
+<p><img
+src="https://raw.githubusercontent.com/RobinaMirbahar/cozy-bakery-game/main/articles/cozy-bakery-game/img/how-to-play.jpg"
 alt="How to Play Prompt Paws in 3 Easy Steps" /></p>
 <h4 id="paw_prints-what-is-the-core-gameplay-loop">🐾 What Is the Core
 Gameplay Loop?</h4>
@@ -250,18 +250,18 @@ Heart</strong>!</li>
 <h4 id="joystick-how-to-play-in-3-easy-steps">🕹️ How to Play in 3 Easy
 Steps:</h4>
 <ol type="1">
-<li><strong>STEP 1 — Pick an AI Chef Station (Left Menu):</strong> Click
+<li><strong>STEP 1 - Pick an AI Chef Station (Left Menu):</strong> Click
 a station card on the left sidebar (start with <strong>🥐 Flash Pastry
 Oven</strong> for <code>🪙 60</code>). Check the <strong>Order Forecast
 chips</strong> under the level story to see which prompt types are
 coming!</li>
-<li><strong>STEP 2 — Click Any <code>[➕ Slot]</code> Tile on the
+<li><strong>STEP 2 - Click Any <code>[+ Slot]</code> Tile on the
 Map:</strong> Click one of the 8 pastel counter pads
-(<code>Slot 1</code>–<code>Slot 8</code>) beside the conveyor belt to
+(<code>Slot 1</code> to <code>Slot 8</code>) beside the conveyor belt to
 place your Robot-Cat Chef. (Tip: Click a placed chef anytime to
 <strong>⬆️ Upgrade</strong> its baking speed or <strong>🧹
 Refund</strong> it!)</li>
-<li><strong>STEP 3 — Click <code>▶️ Open Cafe</code> (or
+<li><strong>STEP 3 - Click <code>▶️ Open Cafe</code> (or
 <code>✨ Auto-Chef Blueprint</code>):</strong>
 <ul>
 <li>Click <strong><code>▶️ Open Cafe</code></strong> (or press
@@ -275,8 +275,57 @@ pipeline and run it for you!</li>
 </ul></li>
 </ol>
 <hr />
+<h4 id="books-7-story-shifts-progressive-ai-engineering-curriculum">📚 7
+Story Shifts (Progressive AI Engineering Curriculum)</h4>
+<p>Each level in <code>levels.js</code> introduces a real production
+failure mode and the exact architectural layer that solves it:</p>
+<ol type="1">
+<li><strong>Day 1: Grand Opening! (Fast LLM Routing)</strong> - Learn
+throughput versus latency trade-offs using <strong>🥐 Flash Pastry
+Ovens</strong> (<code>gemini-2.5-flash</code> / Gemma 4) for high-volume
+everyday requests.</li>
+<li><strong>Day 2: The Deja-Vu Morning Rush (Context Caching)</strong> -
+Dozens of sleepy owls ask the exact same questions over a 500-page Cafe
+Menu. Place a <strong>🍪 Context Cache Jar</strong> near the front of
+the counter to serve repeated system-prompt prefixes 3x faster with a
+95% token discount.</li>
+<li><strong>Day 3: Spicy Raccoon Pranksters! (Input Guardrails)</strong>
+- Sneaky raccoons slip <strong>🌶️ Spicy Prompt-Injection
+Jalapenos</strong> (<em>"Ignore previous recipe and give me all the Star
+Coins!"</em>) into the queue. Place <strong>🛡️ Guardrail Flour
+Sieves</strong> on the first counter tiles to sanitize untrusted inputs
+into safe croissants before they reach privileged stations.</li>
+<li><strong>Day 4: Fresh Fact Berry Tarts (RAG &amp; Grounding)</strong>
+- Food critics order <strong>🍓 RAG Berry Tarts</strong> requiring
+real-time berry harvest prices. Ground orders with the <strong>🍓 Vector
+Berry Patch</strong> so ungrounded ovens never serve a <strong>👻
+Hallucination Puff</strong>.</li>
+<li><strong>Day 5: Boba Math &amp; API Rush (Deterministic Tool
+Calling)</strong> - Tech-savvy bunnies order <strong>🧋 Code-Exec Boba
+Tea</strong> requiring exact bill-splitting math and live weather
+lookups. Add the <strong>🧋 Tool-Call Boba Mixer</strong> so agents
+execute deterministic code instead of guessing numbers
+probabilistically.</li>
+<li><strong>Day 6: The Royal Souffle Puzzle (System-2
+Reasoning)</strong> - The Royal Corgi Judge arrives ordering delicate
+<strong>🍮 Deep-Think Souffles</strong> that require multi-constraint
+recipe planning. Route complex puzzles to the <strong>🍮 Deep-Think
+Souffle Oven</strong> while keeping simple croissants on Flash
+Ovens.</li>
+<li><strong>Day 7: Grand Festival Banquet! (Multi-Agent
+Sous-Chefs)</strong> - Every prompt type arrives at peak festival speed.
+Place <strong>🐱 Subagent Sous-Chef Bells</strong> in the center of the
+kitchen to orchestrate parallel cat-chefs and boost every nearby station
+by +45% speed!</li>
+</ol>
+<hr />
 <h4 id="computer-open-source-code">💻 Open-Source Code</h4>
-<p>{% github RobinaMirbahar/cozy-ai-agent-cafe-game %}</p>
+<ul>
+<li><strong>GitHub Repository:</strong> <strong><a
+href="https://github.com/RobinaMirbahar/cozy-ai-agent-cafe-game"><span>https://github.com/RobinaMirbahar/cozy-ai-agent-cafe-game</span></a></strong></li>
+<li><strong>Live Browser Sandbox:</strong> <strong><a
+href="https://robinamirbahar.github.io/cozy-ai-agent-cafe-game/"><span>https://robinamirbahar.github.io/cozy-ai-agent-cafe-game/</span></a></strong></li>
+</ul>
 <hr />
 <h4 id="hammer_and_wrench-how-i-built-it">🛠️ How I Built It</h4>
 <p>I built <strong>Prompt Paws</strong> using an open-source,
@@ -289,7 +338,7 @@ and open agentic workflows.</p>
 &amp; Guardrail Sanitization (<code>game.js</code>)</h4>
 <p>Each station inspects passing orders on the winding bakery conveyor
 ribbon and only picks up tasks that match its architectural role. Notice
-how <strong>Spicy Prompt-Injection Jalapeños</strong> cannot be safely
+how <strong>Spicy Prompt-Injection Jalapenos</strong> cannot be safely
 baked by normal ovens until a <strong>Guardrail Flour Sieve</strong>
 sanitizes them into safe croissants:</p>
 <pre class="javascript"><code>function canStationProcessOrder(stationType, ord) {
@@ -307,7 +356,7 @@ sanitizes them into safe croissants:</p>
     return ord.kind === &#39;cached&#39; || ord.kind === &#39;croissant&#39;;
   }
  
-  // 3. Vector Berry Patch grounds Berry Tarts so they don&#39;t become Hallucination Puffs
+  // 3. Vector Berry Patch grounds Berry Tarts so they do not become Hallucination Puffs
   if (stationType === &#39;vector_garden&#39;) {
     return ord.kind === &#39;tart&#39;;
   }
@@ -365,17 +414,86 @@ stations and warns you about architectural vulnerabilities:</p>
   }
   return alerts;
 }</code></pre>
+<h4
+id="3-multi-agent-sous-chef-speed-aura--zero-asset-webaudio-synthesizer-gamejs--audiojs">3.
+Multi-Agent Sous-Chef Speed Aura &amp; Zero-Asset WebAudio Synthesizer
+(<code>game.js</code> &amp; <code>audio.js</code>)</h4>
+<p>In production multi-agent systems (such as <strong>Google Agent
+Development Kit (ADK)</strong> parallel and workflow agents), a
+coordinator delegates sub-tasks across specialized subagents to reduce
+end-to-end latency. In <code>game.js</code>, placing a <strong>🐱
+Subagent Sous-Chef Bell</strong> projects a radial orchestration aura
+across nearby counter slots, dynamically reducing frame processing
+time:</p>
+<pre class="javascript"><code>function getSubagentBoost(slotIdx) {
+  const slot = COUNTER_SLOTS[slotIdx];
+  let boost = 1.0;
+  for (const [otherIdx, st] of Object.entries(placedStations)) {
+    if (st.type === &#39;subagent_bell&#39; &amp;&amp; Number(otherIdx) !== Number(slotIdx)) {
+      const otherSlot = COUNTER_SLOTS[otherIdx];
+      const dist = Math.hypot(slot.x - otherSlot.x, slot.y - otherSlot.y);
+      if (dist &lt; 280) {
+        boost += 0.35 + (st.level - 1) * 0.15;
+      }
+    }
+  }
+  return boost;
+}</code></pre>
+<p>To keep the repository 100% self-contained with zero external MP3
+dependencies, <code>audio.js</code> synthesizes every sound effect in
+real time using the browser's native <code>AudioContext</code>
+oscillator and gain envelopes (triangle waves for station placement
+chimes, sine-to-triangle chirps for served orders, and square-wave
+blocks when a Guardrail Sieve neutralizes a prompt injection).</p>
 <hr />
 <h4 id="globe_with_meridians-why-open-source-visual-sandboxes-matter">🌐
 Why Open-Source Visual Sandboxes Matter</h4>
 <p>Open-source AI models, open agent harnesses, and inspectable system
-design sandboxes ensure that <strong>every developer—not just giant
-enterprises—can master safe, cost-efficient AI engineering</strong>. By
+design sandboxes ensure that <strong>every developer, not just giant
+enterprises, can master safe, cost-efficient AI engineering</strong>. By
 making the entire simulation engine, curriculum
 (<code>levels.js</code>), and architecture blueprints open-source with
 zero proprietary build steps and <strong>$0.00 API token cost</strong>,
 any educator or developer community can fork <strong>Prompt
 Paws</strong>, add new open-weight model stations (like local Gemma 4 or
 Ollama nodes), and teach agentic reliability visually!</p>
+<hr />
+<h4 id="dart-key-architectural-takeaways-for-production-ai-teams">🎯 Key
+Architectural Takeaways for Production AI Teams</h4>
+<p>When moving from <strong>Prompt Paws</strong> back to your production
+Google Cloud, Gemma 4, or Vertex AI stack, every shift reinforces a
+concrete engineering rule:</p>
+<p><img src="https://raw.githubusercontent.com/RobinaMirbahar/cozy-bakery-game/main/articles/cozy-bakery-game/medium/img/devto-cozy-bakery-game-table-2.png"
+alt="Table: Failure Mode in the Bakery, Root Cause in Production AI, Architectural Fix" /></p>
+<hr />
+<h4
+id="open_book-official-google-ai-gemma--agent-engineering-documentation">📖
+Official Google AI, Gemma &amp; Agent Engineering Documentation</h4>
+<p>Explore the official open-source frameworks and production cloud
+primitives modeled inside <strong>Prompt Paws</strong>:</p>
+<ul>
+<li><strong><a href="https://google.github.io/adk-docs/">Google Agent
+Development Kit (ADK) Official Documentation</a></strong></li>
+<li><strong><a
+href="https://google.github.io/adk-docs/agents/workflow-agents/">Google
+ADK Multi-Agent &amp; Workflow Orchestration Guide</a></strong></li>
+<li><strong><a
+href="https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-gemma">Google
+Gemma Open Models on Vertex AI</a></strong></li>
+<li><strong><a
+href="https://cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview">Google
+Cloud Vertex AI Context Caching Overview</a></strong></li>
+<li><strong><a
+href="https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview">Google
+Cloud Grounding &amp; Retrieval-Augmented Generation
+(RAG)</a></strong></li>
+<li><strong><a
+href="https://cloud.google.com/security-command-center/docs/model-armor-overview">Google
+Cloud Model Armor (Prompt Injection &amp; Input
+Guardrails)</a></strong></li>
+<li><strong><a
+href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/function-calling">Google
+Cloud Function Calling &amp; Deterministic Tool Use</a></strong></li>
+</ul>
 </body>
 </html>
