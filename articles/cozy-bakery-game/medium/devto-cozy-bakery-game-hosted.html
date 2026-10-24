@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>I Built a Cozy 60 FPS AI Agent Bakery Game (Built with Gemma 4 &amp; Antigravity) to Teach RAG, Guardrails &amp; Multi-Agent Orchestration</title>
+  <meta name="description" content="Play Prompt Paws: Cozy AI Agent Cafe — an interactive 60 FPS HTML5 Canvas simulation built with Google Gemma 4 &amp; Antigravity that teaches RAG, Context Caching, Guardrails, and Subagent Orchestration through pastry chef bots." />
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+    body{font-family:-apple-system,'Segoe UI',Roboto,'Liberation Sans',Arial,sans-serif;
+         font-size:18px;line-height:1.58;max-width:42em;color:#242424;}
+    h1,h2,h3,h4{font-weight:700;line-height:1.25;margin-top:1.8em;}
+    h4{font-size:1.25em;}
+    img{max-width:100%;height:auto;display:block;margin:1.6em 0;}
+    pre{background:#f7f7f7;border:1px solid #e6e6e6;border-radius:4px;
+        padding:12px 14px;overflow-x:auto;font-size:14px;line-height:1.45;}
+    code{font-family:'Liberation Mono',Menlo,Consolas,monospace;}
+    :not(pre)>code{background:#f2f2f2;padding:1px 5px;border-radius:3px;font-size:.9em;}
+    blockquote{border-left:3px solid #ddd;margin-left:0;padding-left:1em;color:#555;}
+    hr{border:0;border-top:1px solid #e6e6e6;margin:2.4em 0;}
+  </style>
+</head>
+<body>
+<figure><img src="https://raw.githubusercontent.com/RobinaMirbahar/cozy-bakery-game/main/articles/cozy-bakery-game/medium/img/cozy_ai_cafe_banner.jpg" alt="I Built a Cozy 60 FPS AI Agent Bakery Game (Built with Gemma 4 &amp; Antigravity) to Teach RAG, Guardrails &amp; Multi-Agent Orchestration" /></figure>
+<h4 id="what-i-built">What I Built</h4>
+<p>Who said learning <strong>AI System Design</strong> has to be all
+dark cyberpunk terminal screens and exploding servers?</p>
+<p>I built and open-sourced <strong>Prompt Paws: The Cozy AI Agent Cafe
+&amp; Bakery</strong> (architected with <strong>Google Gemma 4 &amp;
+Antigravity</strong>) — an interactive <strong>60 FPS AI Agent
+Architecture Training &amp; Simulation Platform</strong> disguised as a
+cozy pastel pastry bakery run by <strong>Robot-Cat Chefs</strong>!
+🐱‍🍳🍰</p>
+<p><strong>Who would use it?</strong></p>
+<ul>
+<li><strong>Engineering Teams, Bootcamps &amp; Developer Relations
+Programs</strong> training developers on production LLM architecture
+(where a single uncached system prompt or missing input guardrail can
+cost thousands of dollars in wasted tokens or security incidents).</li>
+<li>Instead of static slide decks, <strong>Prompt Paws</strong> gives
+teams an interactive, visual sandbox where every pastry station maps
+<strong>1-to-1</strong> to a real production AI pattern:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/RobinaMirbahar/cozy-bakery-game/main/articles/cozy-bakery-game/medium/img/devto-cozy-bakery-game-table-1.png"
+alt="Table: Cozy Bakery Station, Critter Order Handled, Production AI Engineering Layer" /></p>
+<p><img
+src="https://raw.githubusercontent.com/RobinaMirbahar/cozy-ai-agent-cafe-game/main/assets/cozy_ai_cafe_banner.jpg"
+alt="Prompt Paws: Cozy AI Agent Cafe Banner" /></p>
+<hr />
+<h4 id="video_game-live-playable-demo--how-to-play-in-30-seconds">🎮
+Live Playable Demo &amp; How to Play in 30 Seconds!</h4>
+<ul>
+<li><strong>🕹️ Play Live in Your Browser (60 FPS HTML5 Canvas):</strong>
+👉 <strong><a
+href="https://robinamirbahar.github.io/cozy-ai-agent-cafe-game/"><span>https://robinamirbahar.github.io/cozy-ai-agent-cafe-game/</span></a></strong></li>
+<li><strong>🔒 100% Client-Side Simulation ($0.00 API Cost &amp; Zero
+Keys Required):</strong> The entire game runs locally inside your
+browser using a deterministic HTML5 Canvas simulation engine—<strong>no
+API keys, no sign-ups, and zero paid LLM tokens</strong> are ever used
+when you or your team play!</li>
+</ul>
+<p><img src="https://files.catbox.moe/i9wg40.jpg"
+alt="How to Play Prompt Paws in 3 Easy Steps" /></p>
+<h4 id="paw_prints-what-is-the-core-gameplay-loop">🐾 What Is the Core
+Gameplay Loop?</h4>
+<p>Think of <strong>Prompt Paws</strong> as a <strong>cozy Tower-Defense
+&amp; Kitchen-Management game for AI Agent Architecture</strong>:</p>
+<ul>
+<li><strong>Customer Pastry Orders (<code>🥐</code>, <code>🍪</code>,
+<code>🌶️</code>, <code>🍓</code>, <code>🧋</code>, <code>🍮</code>) =
+Incoming User Prompts</strong> moving along the bakery conveyor belt
+toward the <strong>Pickup Window (<code>🛎️</code>)</strong>.</li>
+<li><strong>Robot-Cat Kitchen Stations = Real-World AI Engineering
+Components</strong> (Fast LLMs, Context Caches, Input Guardrails, RAG
+Vector DBs, Deterministic Tool Callers, System-2 Reasoning Models, and
+Multi-Agent Sous-Chefs) that intercept and process prompts before they
+reach the customer!</li>
+<li><strong>Win / Lose Condition:</strong> Every order baked by the
+right AI Chef Station earns <strong>🪙 Star Coins</strong>! If an
+unbaked order, an ungrounded <strong>👻 Hallucination Puff</strong>, or
+a sneaky <strong>🌶️ Prompt Injection</strong> slips all the way to the
+Pickup Window, you lose a <strong>💖 Cafe Reputation
+Heart</strong>!</li>
+</ul>
+<h4 id="joystick-how-to-play-in-3-easy-steps">🕹️ How to Play in 3 Easy
+Steps:</h4>
+<ol type="1">
+<li><strong>STEP 1 — Pick an AI Chef Station (Left Menu):</strong> Click
+a station card on the left sidebar (start with <strong>🥐 Flash Pastry
+Oven</strong> for <code>🪙 60</code>). Check the <strong>Order Forecast
+chips</strong> under the level story to see which prompt types are
+coming!</li>
+<li><strong>STEP 2 — Click Any <code>[➕ Slot]</code> Tile on the
+Map:</strong> Click one of the 8 pastel counter pads
+(<code>Slot 1</code>–<code>Slot 8</code>) beside the conveyor belt to
+place your Robot-Cat Chef. (Tip: Click a placed chef anytime to
+<strong>⬆️ Upgrade</strong> its baking speed or <strong>🧹
+Refund</strong> it!)</li>
+<li><strong>STEP 3 — Click <code>▶️ Open Cafe</code> (or
+<code>✨ Auto-Chef Blueprint</code>):</strong>
+<ul>
+<li>Click <strong><code>▶️ Open Cafe</code></strong> (or press
+<code>Spacebar</code>) to start the shift and watch your Robot-Cat Chefs
+bake!</li>
+<li><strong>Want to watch an instant demo first?</strong> Click the
+purple <strong><code>✨ Auto-Chef Blueprint</code></strong> button in
+the top bar on any of the <strong>7 Story Shifts</strong> and the game
+will automatically build the optimal Guardrail, Cache, RAG, and Subagent
+pipeline and run it for you!</li>
+</ul></li>
+</ol>
+<hr />
+<h4 id="computer-open-source-code">💻 Open-Source Code</h4>
+<p>{% github RobinaMirbahar/cozy-ai-agent-cafe-game %}</p>
+<hr />
+<h4 id="hammer_and_wrench-how-i-built-it">🛠️ How I Built It</h4>
+<p>I built <strong>Prompt Paws</strong> using an open-source,
+zero-dependency HTML5 Canvas 60 FPS simulation engine
+(<code>game.js</code>), a 7-shift progressive AI engineering curriculum
+(<code>levels.js</code>), and a procedural WebAudio synthesizer
+(<code>audio.js</code>), orchestrated via <strong>Antigravity</strong>
+and open agentic workflows.</p>
+<h4 id="1-order-routing--guardrail-sanitization-gamejs">1. Order Routing
+&amp; Guardrail Sanitization (<code>game.js</code>)</h4>
+<p>Each station inspects passing orders on the winding bakery conveyor
+ribbon and only picks up tasks that match its architectural role. Notice
+how <strong>Spicy Prompt-Injection Jalapeños</strong> cannot be safely
+baked by normal ovens until a <strong>Guardrail Flour Sieve</strong>
+sanitizes them into safe croissants:</p>
+<pre class="javascript"><code>function canStationProcessOrder(stationType, ord) {
+  // 1. Only the Guardrail Flour Sieve can catch and sanitize Spicy Prompt Injections!
+  if (stationType === &#39;guardrail_sieve&#39;) {
+    return ord.kind === &#39;jalapeno&#39;;
+  }
+  // Unfiltered prompt injections bypass normal ovens and damage Cafe Reputation Hearts!
+  if (ord.kind === &#39;jalapeno&#39;) {
+    return false;
+  }
+ 
+  // 2. Context Cache Jar serves repeated menu queries at 3x speed + bonus Star Coins
+  if (stationType === &#39;cookie_cache&#39;) {
+    return ord.kind === &#39;cached&#39; || ord.kind === &#39;croissant&#39;;
+  }
+ 
+  // 3. Vector Berry Patch grounds Berry Tarts so they don&#39;t become Hallucination Puffs
+  if (stationType === &#39;vector_garden&#39;) {
+    return ord.kind === &#39;tart&#39;;
+  }
+ 
+  // 4. Tool-Call Boba Mixer runs deterministic calculations &amp; API recipes
+  if (stationType === &#39;tool_blender&#39;) {
+    return ord.kind === &#39;boba&#39;;
+  }
+ 
+  // 5. Deep-Think Souffle Oven handles multi-step System-2 reasoning
+  if (stationType === &#39;reasoning_oven&#39;) {
+    return ord.kind === &#39;souffle&#39; || ord.kind === &#39;croissant&#39;;
+  }
+ 
+  // 6. Flash Pastry Oven handles high-throughput everyday Prompt Croissants
+  if (stationType === &#39;flash_oven&#39;) {
+    return ord.kind === &#39;croissant&#39; || ord.kind === &#39;cached&#39;;
+  }
+ 
+  // 7. Subagent Sous-Chef Bell orchestrates parallel helpers
+  if (stationType === &#39;subagent_bell&#39;) {
+    return ord.kind !== &#39;jalapeno&#39;;
+  }
+  return false;
+}</code></pre>
+<h4
+id="2-real-time-ai-architecture-linter-chef-whiskers-catfried_egg">2.
+Real-Time AI Architecture Linter ("Chef Whiskers" 🐱‍🍳)</h4>
+<p>Before you open the cafe doors, <strong>Chef Whiskers (Staff AI
+Pastry Architect)</strong> performs live static analysis on your placed
+stations and warns you about architectural vulnerabilities:</p>
+<pre class="javascript"><code>function evaluateKitchenArchitecture() {
+  const lvl = window.CAFE_LEVELS[currentLevelIdx];
+  const weights = lvl.orderWeights;
+  const typesPlaced = Object.values(placedStations).map((s) =&gt; s.type);
+  const alerts = [];
+ 
+  if (weights.jalapeno &amp;&amp; !typesPlaced.includes(&#39;guardrail_sieve&#39;)) {
+    alerts.push({
+      kind: &#39;warn&#39;,
+      text: &#39;Prompt Injection Risk! Place a Guardrail Flour Sieve near Slot 1 or 2 to neutralize spicy raccoon orders!&#39;
+    });
+  }
+  if (weights.tart &amp;&amp; !typesPlaced.includes(&#39;vector_garden&#39;)) {
+    alerts.push({
+      kind: &#39;warn&#39;,
+      text: &#39;Hallucination Warning! Berry Tarts need a Vector Berry Patch (RAG) so chefs do not guess facts!&#39;
+    });
+  }
+  if (weights.boba &amp;&amp; !typesPlaced.includes(&#39;tool_blender&#39;)) {
+    alerts.push({
+      kind: &#39;warn&#39;,
+      text: &#39;Math/API Alert! Add a Tool-Call Boba Mixer to run deterministic calculations accurately.&#39;
+    });
+  }
+  return alerts;
+}</code></pre>
+<hr />
+<h4 id="globe_with_meridians-why-open-source-visual-sandboxes-matter">🌐
+Why Open-Source Visual Sandboxes Matter</h4>
+<p>Open-source AI models, open agent harnesses, and inspectable system
+design sandboxes ensure that <strong>every developer—not just giant
+enterprises—can master safe, cost-efficient AI engineering</strong>. By
+making the entire simulation engine, curriculum
+(<code>levels.js</code>), and architecture blueprints open-source with
+zero proprietary build steps and <strong>$0.00 API token cost</strong>,
+any educator or developer community can fork <strong>Prompt
+Paws</strong>, add new open-weight model stations (like local Gemma 4 or
+Ollama nodes), and teach agentic reliability visually!</p>
+</body>
+</html>
