@@ -7,7 +7,8 @@
 ![Zero_Install](https://img.shields.io/badge/Zero_Install-Browser_Playable-0F9D58?style=for-the-badge&logo=html5&logoColor=white)
 ![Creator](https://img.shields.io/badge/Creator-Robina_Mirbahar-181717?style=for-the-badge&logo=github&logoColor=white)
 
-> **Author & Architect:** [Robina Mirbahar](https://github.com/RobinaMirbahar) (Google Developer Expert in Cloud & AI)  
+> **Author & Architect:** [Robina Mirbahar](https://github.com/RobinaMirbahar) ([Google Developer Expert in Cloud & AI](https://developers.google.com/profile/u/106918534005910641104?utm_campaign=deveco_gdemembers&utm_source=deveco) · Google Cloud Champion Innovator · Co-Author of [*AI Engineering*](https://www.amazon.com/dp/B0GWCZWCF4))  
+> 📚 **Companion Publications:** [Medium (Google Cloud) Featured Article](https://medium.com/google-cloud/i-built-a-cozy-60-fps-ai-agent-bakery-game-built-with-gemma-4-antigravity-to-teach-rag-9e36c43b8cbc) · [DEV.to (@gde) Article](https://dev.to/gde/i-built-a-cozy-60-fps-ai-agent-bakery-game-to-teach-rag-guardrails-context-caching-multi-agent-2ek) · [Play Live 60-FPS Game](https://robinamirbahar.github.io/cozy-ai-agent-cafe-game/)  
 > **Focus:** 60 FPS Interactive Bakery Simulation Teaching RAG, Guardrails, Context Caching & Multi-Agent Orchestration
 
 ---
@@ -47,6 +48,21 @@ flowchart TD
     K_Cache -->|Cache Miss| K_RAG --> K_Bake
     K_Cache -->|Cache Hit| K_Bake
     K_Bake --> H_Metrics
+    style Orders fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
+    style O_Norm fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
+    style O_Adv fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style Kitchen fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87
+    style K_Guard fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
+    style Bouncer fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
+    style K_Cache fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style Display fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87
+    style K_RAG fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
+    style Vault fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
+    style K_Bake fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style HUD fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87
+    style H_Metrics fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
+    style Cost fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
+    style Latency fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
 ```
 
 ---
@@ -229,7 +245,3 @@ Open-source AI models, open agent harnesses, and inspectable system design sandb
 | **[a2a-mcp-mesh-cloudrun](https://github.com/RobinaMirbahar/a2a-mcp-mesh-cloudrun)** | Agent-to-Agent (A2A) & Multi-MCP Mesh on Cloud Run with Gemma 4, Google ADK, Spanner Graph & AlloyDB | ![Stars](https://img.shields.io/github/stars/RobinaMirbahar/a2a-mcp-mesh-cloudrun?style=flat-square&color=EA4335) ![Last Commit](https://img.shields.io/github/last-commit/RobinaMirbahar/a2a-mcp-mesh-cloudrun?style=flat-square) |
 | **[cloudguard-gemma-agent](https://github.com/RobinaMirbahar/cloudguard-gemma-agent)** | 6-Part Production Gemma Enterprise Agent Series (ADK, Cloud Run L4 GPU, Firestore, Model Armor, Vertex AI QLoRA) | ![Stars](https://img.shields.io/github/stars/RobinaMirbahar/cloudguard-gemma-agent?style=flat-square&color=4285F4) ![Last Commit](https://img.shields.io/github/last-commit/RobinaMirbahar/cloudguard-gemma-agent?style=flat-square) |
 | **[cozy-ai-agent-cafe-game](https://github.com/RobinaMirbahar/cozy-ai-agent-cafe-game)** | Prompt Paws: 60 FPS Cozy AI Agent Bakery Simulation Game teaching RAG, Guardrails, Context Caching & Multi-Agent Loops | ![Stars](https://img.shields.io/github/stars/RobinaMirbahar/cozy-ai-agent-cafe-game?style=flat-square&color=7928CA) ![Last Commit](https://img.shields.io/github/last-commit/RobinaMirbahar/cozy-ai-agent-cafe-game?style=flat-square) |
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RobinaMirbahar/RobinaMirbahar/main/ProfileImages/GithubBanner.svg" alt="Robina Mirbahar Banner" width="100%" />
-</div>
