@@ -48,21 +48,6 @@ flowchart TD
     K_Cache -->|Cache Miss| K_RAG --> K_Bake
     K_Cache -->|Cache Hit| K_Bake
     K_Bake --> H_Metrics
-    style Orders fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
-    style O_Norm fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
-    style O_Adv fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
-    style Kitchen fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87
-    style K_Guard fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
-    style Bouncer fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
-    style K_Cache fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
-    style Display fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87
-    style K_RAG fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
-    style Vault fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
-    style K_Bake fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
-    style HUD fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87
-    style H_Metrics fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
-    style Cost fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
-    style Latency fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
 ```
 
 ---
